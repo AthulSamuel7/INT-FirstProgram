@@ -1,3 +1,5 @@
+<!-- play button, damping coeffficent, speed  -->
+
 <html lang=en>
 
 <head>
@@ -13,7 +15,7 @@
         canvas = document.createElement('canvas');
         ctx = canvas.getContext("2d");
         var ball;
-        var message = "gravity simulator";
+        var message = "BOUNCING BALL";
 
 
         // Velocity x
@@ -27,13 +29,13 @@
 
         function init() {
             setupCanvas();
-            vy = (Math.random() * -15) + -5;
+            vy = 15;
             ball = {
-                x: canvas.width / 2,
+                x: canvas.width / 10,
                 y: 100,
-                radius: 20,
+                radius: 30,
                 status: 0,
-                color: "red"
+                color: "green"
             };
 
         } //end init method
@@ -41,9 +43,9 @@
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             //display some text
-            ctx.fillStyle = "blue";
-            ctx.font = "20px Arial";
-            ctx.fillText(message, 20, 20);
+            ctx.fillStyle = "yellow";
+            ctx.font = "40px Arial";
+            ctx.fillText(message, 40, 40);
 
 
 
@@ -58,7 +60,7 @@
 
         }
 
-        setInterval(draw, 1000 / 35);
+        setInterval(draw, 1000 / 15);
 
 
 
@@ -84,7 +86,7 @@
                 if (vy < 0 && vy > -2.1)
                     vy = 0;
                 //do this otherwise ball never stops on xaxis
-                if (Math.abs(vx) < 1.1)
+                if (Math.abs(vx) < 4.1)
                     vx = 0;
 
                 xF();
