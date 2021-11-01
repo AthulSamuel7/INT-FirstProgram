@@ -21,7 +21,7 @@
         // Velocity y - randomly set
         var vy;
 
-        var gravity = 0.9;
+        var gravity = 0.5;
         var bounce = 0.7;
         var xFriction = 0.1;
 
@@ -30,7 +30,7 @@
             vy = (Math.random() * -15) + -5;
             ball = {
                 x: canvas.width / 2,
-                y: 10,
+                y: 100,
                 radius: 20,
                 status: 0,
                 color: "red"
