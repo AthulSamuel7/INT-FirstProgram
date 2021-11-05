@@ -1,16 +1,26 @@
 <!-- play button, damping coeffficent, speed  -->
 
 <html lang=en>
-
 <head>
     <meta charset=utf-8>
     <title>Javascript gravity</title>
-</head>
+        <link rel="stylesheet" href="style.css" />
 
-<body onload="init()">
+    </head>
+    <body onload="init()">
+    <div class="mainContainer" >
+    
+    First Name: <input type="text" id="myText" value="Mickey">
 
+<p>Click the button to display the value of the value attribute of the text field.</p>
 
-    <script>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<button onClick="window.location.reload();">Refresh Page</button>
+
+    <script >
         var canvas, ctx, container;
         canvas = document.createElement('canvas');
         ctx = canvas.getContext("2d");
@@ -61,11 +71,7 @@
         }
 
         setInterval(draw, 1000 / 15);
-
-
-
-
-        function ballMovement() {
+                function ballMovement() {
             ball.x += vx;
             ball.y += vy;
             vy += gravity;
@@ -77,8 +83,7 @@
 
             // Ball hits the floor
             if (ball.y + ball.radius > canvas.height) { // ||
-
-                // Re-positioning on the base
+                            // Re-positioning on the base
                 ball.y = canvas.height - ball.radius;
                 //bounce the ball
                 vy *= -bounce;
@@ -88,8 +93,7 @@
                 //do this otherwise ball never stops on xaxis
                 if (Math.abs(vx) < 4.1)
                     vx = 0;
-
-                xF();
+                                  xF();
 
             }
 
@@ -121,8 +125,15 @@
 
             ctx.strokeStyle = "#ffffff";
             ctx.lineWidth = 2;
-        }
-    </script>
-</body>
+                    }
 
-</html>
+
+                    function myFunction() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("demo").innerHTML = x;
+}
+    </script>
+    
+    </div>
+
+</body>
