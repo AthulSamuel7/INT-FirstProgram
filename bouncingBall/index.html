@@ -10,17 +10,19 @@
     <body onload="init()">
     <div class="mainContainer" >
     
-    First Name: <input type="text" id="myText" value="Mickey">
+    First Name: <input type="number" id="myText" value="">
 
-<p>Click the button to display the value of the value attribute of the text field.</p>
 
-<button onclick="myFunction()">Try it</button>
+<button >Try it</button>
 
-<p id="demo"></p>
 
 <button onClick="window.location.reload();">Refresh Page</button>
 
     <script >
+
+  var x = document.getElementById("myText").value;
+  console.log(x)
+
         var canvas, ctx, container;
         canvas = document.createElement('canvas');
         ctx = canvas.getContext("2d");
@@ -128,10 +130,7 @@
                     }
 
 
-                    function myFunction() {
-  var x = document.getElementById("myText").value;
-  document.getElementById("demo").innerHTML = x;
-}
+   
     </script>
     
     </div>
