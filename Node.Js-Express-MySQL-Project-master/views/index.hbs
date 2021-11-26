@@ -1,25 +1,22 @@
-<h1>{{title}}</h1>
-<p>Welcome to testing {{ title }}</p>
+ <h1>{{title}}</h1>
+<p>Content Placeholder{{ title }}</p>
 <br />
-<p style="white-space: pre-wrap;">
+<p style="white-space: pre-wrap; background-color: grey;">
   {{ data }}
-</p>
 
+  {{function getKeyByValue(data, value) {
+  return Object.keys(data).find(key => data[key] === value);
+}}}
 
-
+</p> 
 {{!-- 
 
-
-<h1>{{title}}</h1>
-<p>Welcome to testimg {{ title }}</p>
-<title>Content Placeholder</title>
-<br />
-<p style="white-space: pre-wrap;">
-  {{ data[0] }}
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
     <title>Content Placeholder</title>
   </head>
   <body>
@@ -40,7 +37,7 @@
           <div class="profile-img animated-bg" id="profile_img">&nbsp;</div>
           <div class="author-info">
             <strong class="animated-bg animated-bg-text" id="name"
-              >&nbsp;</strong
+              > {{ data }}</strong
             >
             <small class="animated-bg animated-bg-text" id="date">&nbsp;</small>
           </div>
@@ -50,51 +47,4 @@
 
     <script src="./script.js"></script>
   </body>
-</p>
-
-
-
-
-
-
-
-{{!--  --}}
-{{!-- 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Content Placeholder</title>
-  </head>
-  <body>
-    <div class="card">
-      <div class="card-header animated-bg" id="header">&nbsp;</div>
-
-      <div class="card-content">
-        <h3 class="card-title animated-bg animated-bg-text" id="title">
-          &nbsp;
-        </h3>
-        <p class="card-excerpt" id="excerpt">
-          &nbsp;
-          <span class="animated-bg animated-bg-text">&nbsp;</span>
-          <span class="animated-bg animated-bg-text">&nbsp;</span>
-          <span class="animated-bg animated-bg-text">&nbsp;</span>
-        </p>
-        <div class="author">
-          <div class="profile-img animated-bg" id="profile_img">&nbsp;</div>
-          <div class="author-info">
-            <strong class="animated-bg animated-bg-text" id="name"
-              >&nbsp;</strong
-            >
-            <small class="animated-bg animated-bg-text" id="date">&nbsp;</small>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
-</html>
- --}} --}}
+</html> --}}
