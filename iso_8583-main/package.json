@@ -43,7 +43,8 @@
   "dependencies": {
     "date-fns": "^2.9.0",
     "iso_8583": "^2.6.5",
-    "jxon": "^2.0.0-beta.5"
+    "jxon": "^2.0.0-beta.5",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
