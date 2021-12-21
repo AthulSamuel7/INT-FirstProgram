@@ -1,0 +1,40 @@
+{
+  "name": "iso8583-js",
+  "version": "1.2.2",
+  "description": "ISO8583 messaging tools (Wrap message & Unwrap message)",
+  "main": "index.js",
+  "dependencies": {
+    "bignumber.js": "^8.1.1",
+    "iso8583-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "all-contributors-cli": "^6.6.1",
+    "chai": "^4.2.0",
+    "goodparts": "^1.2.1",
+    "mocha": "^6.1.4"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "lint": "node_modules/.bin/goodparts path/to/files/for/linting"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adefirmanf/iso8583.git"
+  },
+  "author": "adefirmanf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adefirmanf/iso8583/issues"
+  },
+  "homepage": "https://github.com/adefirmanf/iso8583#readme",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "keywords": [
+    "iso8583",
+    "financial",
+    "transaction",
+    "iso"
+  ]
+}

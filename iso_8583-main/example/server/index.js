@@ -68,7 +68,7 @@ server.on('connection', (socket) => {
                 break;
             default:
                 const new_mess = iso;
-                iso[0] = `${iso[0].response(dd.slice(0, 20))}10`;
+                iso[0] = `${iso[0].response(data.slice(0, 20))}10`;
                 new_mess[39] = '00';
                 helpers.attachDiTimeStamps(new_mess);
                 socket.write(new Iso_8583(new_mess).getBufferMessage());
