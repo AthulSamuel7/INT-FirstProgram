@@ -26,8 +26,3 @@ console.log(x.wrapMsg()); // -> 4008000000000000366577921569117691112406
 console.log('**************************************************************************');
 // Unwrap the message
 console.log(x.unWrapMsg('4008000000000000366577921569117691112406'));
-
-
-let randomNUM = Math.floor(Math.random() * 5) + 1;
-
-console.log(randomNUM);
