@@ -23,7 +23,7 @@
                         <label class="label">Card Details</label>
 
 
-                        <input type="text" class="input" name="Card_Details" placeholder="Enter Card Details" oninvalid="InvalidMsg(this)" oninput="InvalidMsg(this)" required="required" />
+                        <input type="text" class="input" name="Card_Details" placeholder="Enter Card Details" />
 
 
 
@@ -33,6 +33,10 @@
                         <label class="label">Amount</label>
                         <input type="number" class="input" name="Amount" placeholder="Enter Amount" oninvalid="InvalidAmountMsg(this)" oninput="InvalidAmountMsg(this)" required="required" />
                         <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <div class="card space icon-relative">
+                        <label class="label">PIN</label>
+                        <input type="password" class="input" name="Password" placeholder="Enter PIN" oninvalid="InvalidAmountMsg(this)" oninput="InvalidAmountMsg(this)" required="required" />
                     </div>
                     <div class="card-grp">
 
@@ -67,6 +71,7 @@
 
             <script>
                 // get the form element from dom
+                let formoutput = [];
                 const formElement = document.querySelector('form#forms')
 
                 // convert the form to JSON
@@ -98,9 +103,17 @@
 
                         }
 
-                        console.log('specific------>>', output.Card_Details)
+                        for (let i = 0; i < 1; ++i) {
+
+                            formoutput.push(output);
+
+                        }
+
                     }
                 }
+
+                console.log('test', formoutput)
+
 
                 formElement.addEventListener("submit", handler)
 
