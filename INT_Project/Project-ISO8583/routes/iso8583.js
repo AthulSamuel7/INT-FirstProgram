@@ -1,5 +1,6 @@
 const ISO8583 = require('iso8583-js');
 
+
 let x = new ISO8583({
     header: 'ISO015000017'
 });
@@ -28,6 +29,10 @@ console.log('*******************************************************************
 console.log(x.unWrapMsg('4008000000000000366577921569117691112406'));
 
 
-let randomNUM = Math.floor(Math.random() * 5) + 1;
+// let randomNUM = Math.floor(Math.random() * 5) + 1;
 
-console.log(randomNUM);
+// console.log(randomNUM);
+
+
+
+module.exports = x.unWrapMsg();

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<body>
+    <div>
+        <input type="text">
+        <br>
+        <input type="text">
+        <br>
+        <input type="radio">
+        <br>
+        <input type="text">
+        <br>
+        <input type="radio">
+        <br>
+    </div>
+    <br>
+    <span id='totalNumberOfTextBox'></span>
+</body>
+<script>
+    total_number_of_check_box();
+
+    function total_number_of_check_box() {
+        var inputObj = document.getElementsByTagName("input"),
+            counter = 0;
+        for (var i = 0; i < inputObj.length; i++) {
+            if (inputObj[i].type == "text") {
+                counter++;
+            }
+        }
+        document.getElementById('totalNumberOfTextBox').innerHTML = "TotalNumber of text box is=" + counter;
+    }
+</script>
+
+</html>

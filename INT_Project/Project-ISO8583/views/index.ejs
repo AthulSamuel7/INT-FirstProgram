@@ -70,8 +70,23 @@
 
 
             <script>
+                import mysql from 'mysql';
+                var con = mysql.createConnection({
+
+                    host: 'localhost',
+
+                    user: 'root',
+
+                    password: '1234',
+
+                    database: 'project'
+
+                });
                 // get the form element from dom
-                let formoutput = [];
+                var CardDetails = [];
+                var Amount = [];
+                var PIN = [];
+
                 const formElement = document.querySelector('form#forms')
 
                 // convert the form to JSON
@@ -105,14 +120,26 @@
 
                         for (let i = 0; i < 1; ++i) {
 
-                            formoutput.push(output);
-
+                            CardDetails.push(Number(output.Card_Details));
+                            Amount.push(Number(output.Amount));
+                            PIN.push(Number(output.PIN));
                         }
 
                     }
                 }
+                var Card_Details = parseInt(CardDetails)
+                var Ammount_use = parseInt(Amount)
+                var PIN_use = parseInt(PIN)
 
-                console.log('test', formoutput)
+
+
+                console.log('test', Card_Details)
+                console.log('test', Ammount_use)
+
+                console.log('test', PIN_use)
+
+
+
 
 
                 formElement.addEventListener("submit", handler)

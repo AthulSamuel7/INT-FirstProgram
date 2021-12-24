@@ -6,9 +6,9 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
-// router.get('/test', function(req, res, next) {
-//     res.render('testingJQ', { title: 'YOOOOOOOOOOOOOOOOOOOOOO' });
-// });
+router.get('/backend', function(req, res, next) {
+    res.render('ISO8583', { title: 'ISO8583' });
+});
 
 module.exports = router;
 
