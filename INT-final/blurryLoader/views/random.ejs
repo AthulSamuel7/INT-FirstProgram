@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>random</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+
+    <div class="wrapper">
+        <div class="payment">
+
+            <h2>random</h2>
+
+            <form id="myform">
+
+                <div class="form">
+                    <div class="card space icon-relative">
+                        <label class="label">Card Details</label>
+
+
+                        <input type="text" class="input" name="Card_Details" placeholder="Enter Card Details" oninvalid="InvalidMsg(this)" oninput="InvalidMsg(this)" required="required" />
+
+
+
+                        <i class="far fa-credit-card"></i>
+                    </div>
+                    <div class="card space icon-relative">
+                        <label class="label">Amount</label>
+                        <input type="number" class="input" name="Amount" placeholder="Enter Amount" oninvalid="InvalidAmountMsg(this)" oninput="InvalidAmountMsg(this)" required="required" />
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <!-- <div class="card-grp"> -->
+
+                    <div class="card-grp">
+                        <div class="card-item">
+
+                            <input type="radio" id="age1" name="age" value="30">
+                            <label class="label">Deposit</label><br>
+
+
+
+                        </div>
+                        <div class="card-grp">
+                            <div class="card-item icon-relative">
+                                <input type="radio" id="age3" name="age" value="100">
+                                <label class="label">Withdraw</label>
+                            </div>
+                        </div>
+
+                        <input type="submit" class="btn" />
+
+
+            </form>
+            </div>
+            </div>
+
+
+
+
+
+
+
+            <script>
+                function InvalidCardMsg(textbox) {
+
+                    if (textbox.value === '') {
+                        textbox.setCustomValidity('Entering an card number is necessary!');
+                    } else if (textbox.validity.typeMismatch) {
+                        textbox.setCustomValidity('Please enter a number');
+                    } else if (textbox.value > 9999999999999999 || textbox.value < 1000000000000000) {
+                        textbox.setCustomValidity('Card number must be 16-digits only !!');
+                    } else {
+                        textbox.setCustomValidity('');
+                    }
+
+                    return true;
+                }
+
+
+
+                function InvalidAmountMsg(textbox) {
+
+                    if (textbox.value === '') {
+                        textbox.setCustomValidity('Enter an Amount!');
+                    } else if (textbox.validity.typeMismatch) {
+                        textbox.setCustomValidity('Invalid type ! Enter Amount');
+                    } else {
+                        textbox.setCustomValidity('');
+                    }
+
+                    return true;
+                }
+            </script>
+
+</body>
+
+</html>
