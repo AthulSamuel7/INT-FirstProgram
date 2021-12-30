@@ -1,31 +1,23 @@
-const sliderContainer = document.querySelector('.slider-container')
-const slideRight = document.querySelector('.right-slide')
-const slideLeft = document.querySelector('.left-slide')
-const upButton = document.querySelector('.up-button')
-const downButton = document.querySelector('.down-button')
-const slidesLength = slideRight.querySelectorAll('div').length
+const loadText = document.querySelector('.loading-text')
+const bg = document.querySelector('.bg')
 
-let activeSlideIndex = 0
+let load = 0
 
-slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`
+let int = setInterval(blurring, 30)
 
-upButton.addEventListener('click', () => changeSlide('up'))
-downButton.addEventListener('click', () => changeSlide('down'))
+function blurring() {
+    load++
 
-const changeSlide = (direction) => {
-    const sliderHeight = sliderContainer.clientHeight
-    if(direction === 'up') {
-        activeSlideIndex++
-        if(activeSlideIndex > slidesLength - 1) {
-            activeSlideIndex = 0
-        }
-    } else if(direction === 'down') {
-        activeSlideIndex--
-        if(activeSlideIndex < 0) {
-            activeSlideIndex = slidesLength - 1
-        }
+    if (load > 99) {
+        clearInterval(int)
     }
 
-    slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`
-    slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
+    loadText.innerText = `${load}%`
+    loadText.style.opacity = scale(load, 0, 100, 1, 0)
+    bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+}
+
+// https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+const scale = (num, in_min, in_max, out_min, out_max) => {
+    return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
 }
