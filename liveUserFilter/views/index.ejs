@@ -24,7 +24,6 @@
             width: 100%;
             border: 1px solid #ddd;
             font-size: 18px;
-            background-color: #8cac98;
             color: rgb(0, 0, 0);
             padding: 30px 20px;
         }
@@ -65,12 +64,14 @@
 
     <table id="myTable">
         <tr class="header">
-            <th style="width:60%;">Name</th>
+            <th style="width:60%;">
+                Name
+            </th>
             <th style="width:40%;">Location</th>
             <th style="width:40%;">Image</th>
 
         </tr>
-        <tr>
+        <tr style="background-color:#<%= color1 %>">
             <td>
                 <%= head1 %>
             </td>
@@ -83,7 +84,7 @@
 
             </td>
         </tr>
-        <tr>
+        <tr style="background-color:#<%= color2 %>">
             <td>
                 <%= head2 %>
             </td>
@@ -96,7 +97,7 @@
 
             </td>
         </tr>
-        <tr>
+        <tr style="background-color:#<%= color3 %>">
             <td>
                 <%= head3 %>
             </td>
