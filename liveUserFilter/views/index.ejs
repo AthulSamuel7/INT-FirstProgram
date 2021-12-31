@@ -1,51 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="stylesheets/style1.css" />
-    <title>Vertical Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+        
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+        
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+        
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="slider-container">
-        <div class="left-slide">
-            <div style="background-color: #FD3555">
-                <h1>
-                    <%= head1 %>
-                </h1>
-                <p>
-                    <%= para1 %>
-                </p>
-            </div>
-            <div style="background-color: #2A86BA">
-                <h1>
-                    <%= head2 %>
-                </h1>
-                <p>
-                    <%= para2 %>
-                </p>
-            </div>
 
-        </div>
-        <div class="right-slide">
-            <div style="background-image: url('<%= picUrl %>')"></div>
-            <div style="background-image: url('<%= picUrl1 %>')"></div>
+    <h2>Live User Filter</h2>
 
-        </div>
-        <div class="action-buttons">
-            <button class="down-button">
-          <i class="fas fa-arrow-down"></i>
-        </button>
-            <button class="up-button">
-          <i class="fas fa-arrow-up"></i>
-        </button>
-        </div>
-    </div>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
-    <script src="javascripts/script.js"></script>
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:60%;">Name</th>
+            <th style="width:40%;">Location</th>
+        </tr>
+        <tr>
+            <td>
+                <%= head1 %>
+            </td>
+            <td>
+                <%= para1 %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= head2 %>
+            </td>
+            <td>
+                <%= para2 %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <%= head3 %>
+            </td>
+            <td>
+                <%= para3 %>
+            </td>
+        </tr>
+        <!-- <tr>
+            <td>Koniglich Essen</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Italy</td>
+        </tr>
+        <tr>
+            <td>North/South</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Paris specialites</td>
+            <td>France</td>
+        </tr>  -->
+    </table>
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
 </body>
 
 </html>
