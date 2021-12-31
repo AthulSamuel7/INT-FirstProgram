@@ -24,7 +24,7 @@
             width: 100%;
             border: 1px solid #ddd;
             font-size: 18px;
-            background-color: #3e57db;
+            background-color: #8cac98;
             color: rgb(0, 0, 0);
             padding: 30px 20px;
         }
@@ -41,14 +41,25 @@
         
         #myTable tr.header,
         #myTable tr:hover {
-            background-color: #f1f1f1;
+            background-color: #8a8d9c;
+        }
+        
+        .headingText {
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            color: #000000;
         }
     </style>
 </head>
 
 <body>
+    <div class="headingText">
+        <h2>Live User Filter</h2>
+        <h4>Search using names</h4>
 
-    <h2>Live User Filter</h2>
+
+    </div>
 
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
@@ -56,6 +67,8 @@
         <tr class="header">
             <th style="width:60%;">Name</th>
             <th style="width:40%;">Location</th>
+            <th style="width:40%;">Image</th>
+
         </tr>
         <tr>
             <td>
@@ -63,6 +76,11 @@
             </td>
             <td>
                 <%= para1 %>
+            </td>
+            <td>
+
+                <img src="<%= picUrl1 %>" style="width:70px;height:70px;">
+
             </td>
         </tr>
         <tr>
@@ -72,6 +90,11 @@
             <td>
                 <%= para2 %>
             </td>
+            <td>
+
+                <img src="<%= picUrl2 %>" style="width:70px;height:70px;">
+
+            </td>
         </tr>
         <tr>
             <td>
@@ -80,27 +103,13 @@
             <td>
                 <%= para3 %>
             </td>
+            <td>
+
+                <img src="<%= picUrl3 %>" style="width:70px;height:70px;">
+
+            </td>
         </tr>
-        <!-- <tr>
-            <td>Koniglich Essen</td>
-            <td>Germany</td>
-        </tr>
-        <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Canada</td>
-        </tr>
-        <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Italy</td>
-        </tr>
-        <tr>
-            <td>North/South</td>
-            <td>UK</td>
-        </tr>
-        <tr>
-            <td>Paris specialites</td>
-            <td>France</td>
-        </tr>  -->
+
     </table>
 
     <script>

@@ -11,8 +11,10 @@ router.get('/1', function(req, res, next) {
     //es.send('respond with a resource');
     doubles.find({}, function(err, rows) {
         console.log(rows[0].url)
-        const picUrl = rows[0].url;
-        const picUrl1 = rows[1].url;
+        const picUrl1 = rows[0].url;
+        const picUrl2 = rows[1].url;
+        const picUrl3 = rows[2].url;
+
 
 
         const head1 = rows[2].h;
@@ -28,7 +30,7 @@ router.get('/1', function(req, res, next) {
 
 
 
-        res.render('index', { picUrl, picUrl1, head1, head2, head3, para1, para2, para3 })
+        res.render('index', { picUrl1, picUrl2, picUrl3, head1, head2, head3, para1, para2, para3 })
     });
 });
 
